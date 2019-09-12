@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class ServiceKomputer {
+
+    public static void main(String[] args) {
+        int banyak_komputer;
+        int total_pembayaran;
+        String hari_servis;
+        int base_fee = 50;
+        int aditional_fee = 10;
+        String drop_off;
+
+ 
+    
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Banyak Komputer yang ingin di service :");
+        banyak_komputer = scan.nextInt();
+        System.out.println("Servis hari kerja [y/n]");
+        hari_servis = scan.next();
+        System.out.println("Drop off dan pick up barang [y/n]");
+        drop_off = scan.next();
+        
+        if (banyak_komputer <=2 && hari_servis.equals("n") && drop_off.equals("n")){
+            System.out.println("base fee = "+ base_fee  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if(banyak_komputer <= 10 && banyak_komputer >=3 && hari_servis.equals("n") && drop_off.equals("n")){
+            System.out.println("base fee = "+ base_fee*2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if(banyak_komputer >10 && hari_servis.equals("n") && drop_off.equals("n")){
+            System.out.println("base fee = "+ base_fee*10  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if (banyak_komputer <=2 && hari_servis.equals("y") && drop_off.equals("n")){
+            System.out.println("base fee = "+ base_fee*2  +"$"+ " & additional fee = "+ aditional_fee*0);
+        }else if(banyak_komputer <= 10 && banyak_komputer >=3 && hari_servis.equals("y") && drop_off.equals("n")){
+            System.out.println("base fee = "+ base_fee*2*2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if(banyak_komputer >10 && hari_servis.equals("y") && drop_off.equals("n")){
+            System.out.println("base fee = "+ base_fee*10*2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+            
+        }else if (banyak_komputer <=2 && hari_servis.equals("n") && drop_off.equals("y")){
+            System.out.println("base fee = "+ base_fee/2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if(banyak_komputer <= 10 && banyak_komputer >=3 && hari_servis.equals("n") && drop_off.equals("y")){
+            System.out.println("base fee = "+ base_fee*2/2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if(banyak_komputer >10 && hari_servis.equals("n") && drop_off.equals("y")){
+            System.out.println("base fee = "+ base_fee*10/2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if (banyak_komputer <=2 && hari_servis.equals("y") && drop_off.equals("y")){
+            System.out.println("base fee = "+ base_fee*2/2  +"$"+ " & additional fee = "+ aditional_fee*0);
+        }else if(banyak_komputer <= 10 && banyak_komputer >=3 && hari_servis.equals("y") && drop_off.equals("y")){
+            System.out.println("base fee = "+ base_fee*2*2/2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else if(banyak_komputer >10 && hari_servis.equals("y") && drop_off.equals("y")){
+            System.out.println("base fee = "+ base_fee*10*2/2  +"$"+ " & additional fee = "+ aditional_fee*banyak_komputer+"$");
+        }else{
+            System.out.println("Isi dengan benar");
+    }
+    }
+    
+}
